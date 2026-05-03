@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrategia Email Mayo 2026 — Factoría Franklin</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F5F0; color: #111; padding: 32px 24px; }
+  h1 { font-size: 20px; font-weight: 600; color: #111; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 24px; }
+
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .leg-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #555; }
+  .leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 28px; }
+  .stat { background: #fff; border-radius: 10px; padding: 14px; text-align: center; border: 1px solid #e8e8e8; }
+  .stat-n { font-size: 24px; font-weight: 600; }
+  .stat-l { font-size: 11px; color: #888; margin-top: 3px; }
+
+  .week { margin-bottom: 24px; }
+  .week-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0; }
+  .week-label { font-size: 13px; font-weight: 600; color: #222; }
+  .week-sub { font-size: 11px; color: #999; }
+
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+
+  .day { border: 1px solid #e0e0e0; border-radius: 10px; padding: 9px; background: #fff; min-height: 130px; }
+  .day.no-send { background: #f9f9f9; opacity: 0.55; }
+  .day.weekend { background: #f5f5f2; }
+  .day-label { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 5px; color: #aaa; }
+
+  .role-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+
+  .time-pill { display: inline-block; font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 20px; margin-bottom: 5px; }
+  .pill-ff { background: #1A3A5C; color: #B5D4F4; }
+  .pill-factorf { background: #E8004C; color: #fff; }
+  .pill-valor { background: #2D6A1F; color: #C5E8A0; }
+  .pill-rec { background: #7A4200; color: #FFD9A0; }
+
+  .card { border-radius: 6px; padding: 6px 8px; margin-bottom: 4px; cursor: pointer; border: 1px solid transparent; transition: border-color 0.15s; }
+  .card:hover { border-color: #ccc; }
+
+  .card-ff { background: #E8F1FB; }
+  .card-ff .ctitle { font-size: 11px; font-weight: 600; color: #0C3A7A; }
+  .card-ff .csub { font-size: 10px; color: #185FA5; margin-top: 1px; }
+
+  .card-factorf { background: #FFF0F4; }
+  .card-factorf .ctitle { font-size: 11px; font-weight: 600; color: #8B1A3A; }
+  .card-factorf .csub { font-size: 10px; color: #C04070; margin-top: 1px; }
+
+  .card-valor { background: #EAF5DC; }
+  .card-valor .ctitle { font-size: 11px; font-weight: 600; color: #1E5C10; }
+  .card-valor .csub { font-size: 10px; color: #3A8020; margin-top: 1px; }
+
+  .card-rec { background: #FFF3E0; }
+  .card-rec .ctitle { font-size: 11px; font-weight: 600; color: #7A3800; }
+  .card-rec .csub { font-size: 10px; color: #B05A00; margin-top: 1px; }
+
+  .seg-tag { font-size: 9px; color: #999; margin-top: 3px; }
+  .event-chip { font-size: 10px; color: #777; padding: 2px 0; border-top: 1px solid #eee; margin-top: 3px; }
+  .past-badge { display: inline-block; font-size: 9px; padding: 1px 6px; border-radius: 10px; background: #f0f0f0; color: #999; border: 1px solid #ddd; margin-bottom: 5px; }
+  .no-send-label { font-size: 10px; color: #ccc; margin-top: 20px; text-align: center; }
+
+  .detail { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 16px 20px; margin-top: 20px; display: none; border-left: 4px solid #1A3A5C; }
+  .detail h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #111; }
+  .drow { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f0f0f0; gap: 12px; }
+  .drow:last-child { border: none; }
+  .dlabel { color: #888; white-space: nowrap; }
+  .dval { color: #222; font-weight: 500; text-align: right; }
+
+  @media (max-width: 900px) {
+    .cal-grid { grid-template-columns: repeat(4, 1fr); }
+    .summary { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .cal-grid { grid-template-columns: repeat(2, 1fr); }
+    .summary { grid-template-columns: 1fr 1fr; }
+    body { padding: 16px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Estrategia Email Mayo 2026</h1>
+<p class="subtitle">Factoría Franklin · Factor F — Estructura fija Lun · Mié · Vie</p>
+
+<div class="legend">
+  <div class="leg-item"><div class="leg-dot" style="background:#1A3A5C;"></div>Agenda Factoría Franklin</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#2D6A1F;"></div>Contenido de valor</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#7A4200;"></div>Recordatorio finde</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#E8004C;"></div>Factor F</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#e8e8e8;border:1px solid #ccc;"></div>Sin envío / evento</div>
+</div>
+
+<div class="summary">
+  <div class="stat"><div class="stat-n" style="color:#1A3A5C;">10</div><div class="stat-l">emails Factoría Franklin</div></div>
+  <div class="stat"><div class="stat-n" style="color:#E8004C;">4</div><div class="stat-l">emails Factor F</div></div>
+  <div class="stat"><div class="stat-n" style="color:#333;">14</div><div class="stat-l">envíos totales mayo</div></div>
+  <div class="stat"><div class="stat-n" style="color:#333; font-size:16px;">Lun · Mié · Vie</div><div class="stat-l">estructura fija semanal</div></div>
+</div>
+
+<!-- RESULTADO PRIMER ENVÍO -->
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px 24px;margin-bottom:24px;border-left:4px solid #1A3A5C;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+    <div>
+      <div style="font-size:13px;font-weight:600;color:#1A3A5C;">Primer envío — Sábado 03 mayo</div>
+      <div style="font-size:11px;color:#999;margin-top:2px;">Factoría Franklin · Agenda general mayo · Toda la base</div>
+    </div>
+    <div style="display:inline-block;font-size:10px;padding:3px 10px;border-radius:20px;background:#EAF5DC;color:#2D6A1F;font-weight:600;">✓ Base sana</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+    <div style="text-align:center;background:#f9f9f9;border-radius:8px;padding:12px 8px;">
+      <div style="font-size:22px;font-weight:700;color:#1A3A5C;">2.124</div>
+      <div style="font-size:10px;color:#888;margin-top:3px;">entregados</div>
+    </div>
+    <div style="text-align:center;background:#EAF5DC;border-radius:8px;padding:12px 8px;">
+      <div style="font-size:22px;font-weight:700;color:#2D6A1F;">9.9%</div>
+      <div style="font-size:10px;color:#3A8020;margin-top:3px;">apertura · 212</div>
+    </div>
+    <div style="text-align:center;background:#f9f9f9;border-radius:8px;padding:12px 8px;">
+      <div style="font-size:22px;font-weight:700;color:#555;">0.37%</div>
+      <div style="font-size:10px;color:#888;margin-top:3px;">clics · 8</div>
+    </div>
+    <div style="text-align:center;background:#EAF5DC;border-radius:8px;padding:12px 8px;">
+      <div style="font-size:22px;font-weight:700;color:#2D6A1F;">0%</div>
+      <div style="font-size:10px;color:#3A8020;margin-top:3px;">spam · 0</div>
+    </div>
+    <div style="text-align:center;background:#FFF3E0;border-radius:8px;padding:12px 8px;">
+      <div style="font-size:22px;font-weight:700;color:#7A4200;">0.33%</div>
+      <div style="font-size:10px;color:#B05A00;margin-top:3px;">bajas · 7</div>
+    </div>
+  </div>
+  <div style="margin-top:12px;font-size:11px;color:#888;border-top:1px solid #f0f0f0;padding-top:10px;">
+    Los <strong style="color:#1A3A5C;">212 que abrieron</strong> son el segmento caliente — priorizados en los recordatorios de la semana 2. Base inactiva 4 meses, 0 denuncias de spam = lista para activar.
+  </div>
+</div>
+
+<!-- SEMANA 1 -->
+<div class="week">
+  <div class="week-header"><span class="week-label">Semana 1 — 1 al 4 de mayo</span><span class="week-sub">Medieval Party</span></div>
+  <div class="cal-grid">
+    <div class="day no-send"><div class="day-label">Lun 01</div><div class="no-send-label">—</div></div>
+    <div class="day no-send"><div class="day-label">Mar 02</div><div class="no-send-label">—</div></div>
+    <div class="day no-send"><div class="day-label">Mié 03</div><div class="no-send-label">—</div></div>
+    <div class="day no-send"><div class="day-label">Jue 04</div><div class="no-send-label">—</div></div>
+    <div class="day no-send"><div class="day-label">Vie 05</div><div class="no-send-label">—</div></div>
+    <div class="day weekend">
+      <div class="day-label">Sáb 03</div>
+      <div class="past-badge">✓ enviado</div>
+      <div class="card card-ff" onclick="show('sab03')">
+        <div class="ctitle">Agenda mayo</div>
+        <div class="csub">9.9% apertura · base sana</div>
+      </div>
+      <div class="event-chip">Medieval Party</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Dom 04</div>
+      <div class="event-chip">Medieval Party</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 2 -->
+<div class="week">
+  <div class="week-header"><span class="week-label">Semana 2 — 5 al 11 de mayo</span><span class="week-sub">Expo Ilustración inaugura · Mercado · Bye Bye</span></div>
+  <div class="cal-grid">
+    <div class="day" style="border-top:3px solid #E8004C;">
+      <div class="day-label" style="color:#E8004C;">Lun 05</div>
+      <div class="role-tag" style="color:#E8004C;">Factor F</div>
+      <div class="time-pill pill-factorf">08:30</div>
+      <div class="card card-factorf" onclick="show('lun05')">
+        <div class="ctitle">Expo Ilustración</div>
+        <div class="csub">Inauguración mié 7</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day" style="border-top:3px solid #1A3A5C;">
+      <div class="day-label" style="color:#1A3A5C;">Mar 06</div>
+      <div class="role-tag" style="color:#1A3A5C;">Agenda</div>
+      <div class="time-pill pill-ff">09:00</div>
+      <div class="card card-ff" onclick="show('mar06')">
+        <div class="ctitle">Semana completa</div>
+        <div class="csub">Mercado · Bye Bye · DJ</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day" style="border-top:3px solid #E8004C;">
+      <div class="day-label" style="color:#E8004C;">Mié 07</div>
+      <div class="role-tag" style="color:#E8004C;">Factor F · recordatorio</div>
+      <div class="time-pill pill-factorf">10:00</div>
+      <div class="card card-factorf" onclick="show('mie07')">
+        <div class="ctitle">Hoy es la noche</div>
+        <div class="csub">Recordatorio inauguración</div>
+        <div class="seg-tag">Abrieron lun · ~150</div>
+      </div>
+      <div class="event-chip">🎨 Inauguración 19:00</div>
+    </div>
+    <div class="day" style="border-top:3px solid #E8004C;">
+      <div class="day-label" style="color:#E8004C;">Jue 08</div>
+      <div class="role-tag" style="color:#E8004C;">Factor F · expo abierta</div>
+      <div class="time-pill pill-factorf">10:00</div>
+      <div class="card card-factorf" onclick="show('jue08')">
+        <div class="ctitle">Expo abierta el finde</div>
+        <div class="csub">Todos los fines de mayo</div>
+        <div class="seg-tag">Abrieron lun · ~150</div>
+      </div>
+    </div>
+    <div class="day" style="border-top:3px solid #7A4200;">
+      <div class="day-label" style="color:#7A4200;">Vie 09</div>
+      <div class="role-tag" style="color:#7A4200;">Recordatorio</div>
+      <div class="time-pill pill-rec">09:00</div>
+      <div class="card card-rec" onclick="show('vie09')">
+        <div class="ctitle">Este finde en Factoría</div>
+        <div class="csub">Mercado · Bye Bye · DJ</div>
+        <div class="seg-tag">Abrieron mar · ~300</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Sáb 09</div>
+      <div class="event-chip">Bye Bye 13:30</div>
+      <div class="event-chip">Mercado Factoría</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Dom 10</div>
+      <div class="event-chip">DJ</div>
+      <div class="event-chip">Mercado Factoría</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 3 -->
+<div class="week">
+  <div class="week-header"><span class="week-label">Semana 3 — 12 al 18 de mayo</span><span class="week-sub">Expo Muñecas · Clases cocina · Convocatoria Textil</span></div>
+  <div class="cal-grid">
+    <div class="day" style="border-top:3px solid #1A3A5C;">
+      <div class="day-label" style="color:#1A3A5C;">Lun 12</div>
+      <div class="role-tag" style="color:#1A3A5C;">Agenda</div>
+      <div class="time-pill pill-ff">09:00</div>
+      <div class="card card-ff" onclick="show('lun12')">
+        <div class="ctitle">Semana completa</div>
+        <div class="csub">Expo Muñecas · Clases cocina · Expo Ilustración</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Mar 13</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #2D6A1F;">
+      <div class="day-label" style="color:#2D6A1F;">Mié 14</div>
+      <div class="role-tag" style="color:#2D6A1F;">Contenido valor</div>
+      <div class="time-pill pill-valor">09:00</div>
+      <div class="card card-valor" onclick="show('mie14')">
+        <div class="ctitle">Convocatoria Textil ★</div>
+        <div class="csub">¿Trabajas con textil?</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Jue 15</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #7A4200;">
+      <div class="day-label" style="color:#7A4200;">Vie 16</div>
+      <div class="role-tag" style="color:#7A4200;">Recordatorio</div>
+      <div class="time-pill pill-rec">09:00</div>
+      <div class="card card-rec" onclick="show('vie16')">
+        <div class="ctitle">Mañana empieza</div>
+        <div class="csub">Expo Muñecas · Clases cocina</div>
+        <div class="seg-tag">Abrieron lun · ~200</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Sáb 16</div>
+      <div class="event-chip">Expo Muñecas</div>
+      <div class="event-chip">Clases cocina</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Dom 17</div>
+      <div class="event-chip">Expo Muñecas</div>
+      <div class="event-chip">Expo Ilustración</div>
+      <div class="event-chip">⏰ Cierre textil</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 4 -->
+<div class="week">
+  <div class="week-header"><span class="week-label">Semana 4 — 19 al 25 de mayo</span><span class="week-sub">Clases cocina · Expomuñecas · DJ</span></div>
+  <div class="cal-grid">
+    <div class="day" style="border-top:3px solid #1A3A5C;">
+      <div class="day-label" style="color:#1A3A5C;">Lun 19</div>
+      <div class="role-tag" style="color:#1A3A5C;">Agenda</div>
+      <div class="time-pill pill-ff">09:00</div>
+      <div class="card card-ff" onclick="show('lun19')">
+        <div class="ctitle">Semana completa</div>
+        <div class="csub">Clases cocina · DJ · Expo Ilustración</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Mar 20</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #2D6A1F;">
+      <div class="day-label" style="color:#2D6A1F;">Mié 21</div>
+      <div class="role-tag" style="color:#2D6A1F;">Contenido valor</div>
+      <div class="time-pill pill-valor">09:00</div>
+      <div class="card card-valor" onclick="show('mie21')">
+        <div class="ctitle">Expositor destacado</div>
+        <div class="csub">Historia detrás del mercado</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Jue 22</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #7A4200;">
+      <div class="day-label" style="color:#7A4200;">Vie 23</div>
+      <div class="role-tag" style="color:#7A4200;">Recordatorio</div>
+      <div class="time-pill pill-rec">09:00</div>
+      <div class="card card-rec" onclick="show('vie23')">
+        <div class="ctitle">Este finde</div>
+        <div class="csub">Clases cocina · DJ · Expo</div>
+        <div class="seg-tag">Abrieron lun · ~200</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Sáb 23</div>
+      <div class="event-chip">Clases cocina</div>
+      <div class="event-chip">Expomuñecas</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Dom 24</div>
+      <div class="event-chip">DJ</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 5 -->
+<div class="week">
+  <div class="week-header"><span class="week-label">Semana 5 — 26 al 31 de mayo</span><span class="week-sub">Día del Patrimonio ★ · Vinilos · Visitas guiadas</span></div>
+  <div class="cal-grid">
+    <div class="day" style="border-top:3px solid #1A3A5C;">
+      <div class="day-label" style="color:#1A3A5C;">Lun 26</div>
+      <div class="role-tag" style="color:#1A3A5C;">Agenda</div>
+      <div class="time-pill pill-ff">09:00</div>
+      <div class="card card-ff" onclick="show('lun26')">
+        <div class="ctitle">Día del Patrimonio ★</div>
+        <div class="csub">Vinilos · Visitas guiadas · Expo</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Mar 27</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #2D6A1F;">
+      <div class="day-label" style="color:#2D6A1F;">Mié 28</div>
+      <div class="role-tag" style="color:#2D6A1F;">Contenido valor</div>
+      <div class="time-pill pill-valor">09:00</div>
+      <div class="card card-valor" onclick="show('mie28')">
+        <div class="ctitle">Historia del edificio ★</div>
+        <div class="csub">Por qué Factoría tiene historia</div>
+        <div class="seg-tag">2.134 · toda la base</div>
+      </div>
+    </div>
+    <div class="day no-send"><div class="day-label">Jue 29</div><div class="no-send-label">—</div></div>
+    <div class="day" style="border-top:3px solid #7A4200;">
+      <div class="day-label" style="color:#7A4200;">Vie 30</div>
+      <div class="role-tag" style="color:#7A4200;">Recordatorio</div>
+      <div class="time-pill pill-rec">09:00</div>
+      <div class="card card-rec" onclick="show('vie30')">
+        <div class="ctitle">Mañana empieza</div>
+        <div class="csub">Vinilos · Patrimonio · Expo</div>
+        <div class="seg-tag">Abrieron lun · ~200</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Sáb 30</div>
+      <div class="event-chip">Vinilos</div>
+      <div class="event-chip">Visitas guiadas</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">Dom 31</div>
+      <div class="event-chip">Vinilos</div>
+      <div class="event-chip">Visitas guiadas</div>
+      <div class="event-chip">Expo Ilustración</div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL PANEL -->
+<div class="detail" id="detail">
+  <h3 id="dtitle"></h3>
+  <div id="drows"></div>
+</div>
+
+<script>
+const data = {
+  sab03: { color:'#1A3A5C', title:'Sábado 03 — Enviado', rows:[['Estado','✓ Enviado el sábado 03 mayo'],['Segmento','Toda la base · 2.134 contactos'],['Apertura','9.9% · 212 abrieron'],['Rebotes','0% · base sana'],['Spam','0 denuncias']] },
+  lun05: { color:'#E8004C', title:'Lunes 05 — Factor F · Expo Ilustración (Email 1)', rows:[['Marca','Factor F'],['Hora','08:30 hrs'],['Segmento','Toda la base · 2.134'],['Asunto','Algo nuevo está pasando en Franklin #741'],['Preview','Y esta noche podés verlo en persona'],['Evento','Inauguración · Mié 7 mayo · 19:00–22:00 hrs'],['Lugar','Franklin #741, Santiago'],['CTA','Inscripción previa (formulario Google)'],['HTML','✓ Listo y descargado']] },
+  mar06: { color:'#1A3A5C', title:'Martes 06 — FF · Agenda semana completa', rows:[['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Hero','Expo Ilustración Factor F'],['Eventos','Mercado Factoría · Bye Bye Showroom · DJ domingo'],['Nota','Juntar todos los eventos en 1 email']] },
+  mie07: { color:'#E8004C', title:'Miércoles 07 — Factor F · Recordatorio (Email 2)', rows:[['Hora','10:00 hrs'],['Segmento','Abrieron email del lunes · ~150 est.'],['Asunto','Hoy es el día — te esperamos esta noche'],['Formato','Email corto · hora + lugar + botón'],['Evento','Esta noche · 19:00–22:00 · Franklin #741']] },
+  jue08: { color:'#E8004C', title:'Jueves 08 — Factor F · Expo abierta finde (Email 3)', rows:[['Hora','10:00 hrs'],['Segmento','Abrieron email del lunes · ~150 est.'],['Mensaje','La expo sigue abierta todos los fines de semana de mayo'],['Fechas','9, 10, 16, 17, 23, 24, 30 y 31 de mayo'],['Lugar','Factor F · Franklin #741']] },
+  vie09: { color:'#7A4200', title:'Viernes 09 — FF · Recordatorio finde', rows:[['Hora','09:00 hrs'],['Segmento','Abrieron martes · ~300 est.'],['Eventos','Mercado Factoría · Bye Bye · DJ domingo'],['Nota','Urgencia — empieza mañana']] },
+  lun12: { color:'#1A3A5C', title:'Lunes 12 — FF · Agenda semana 3', rows:[['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Hero','Expo Venta Muñecas Chile · 16 y 17 mayo'],['Secundario','Clases cocina · Claudia Varleta · Expo Ilustración'],['Entrada','Liberada · 10 a 19 hrs']] },
+  mie14: { color:'#2D6A1F', title:'Miércoles 14 — Factor F · Convocatoria Textil ★', rows:[['Tipo','Contenido de valor — email elaborado'],['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Asunto sugerido','¿Trabajas con textil? Esto es para ti'],['Disciplinas','Bordado · tejido · técnicas mixtas'],['Cierre convocatoria','17 de mayo'],['Inauguración','Jueves 4 de junio · Factor F'],['Nota','Email con fotos del espacio y espíritu de Factor F']] },
+  vie16: { color:'#7A4200', title:'Viernes 16 — FF · Recordatorio semana 3', rows:[['Hora','09:00 hrs'],['Segmento','Abrieron lunes · ~200 est.'],['Eventos','Expo Muñecas · Clases cocina · Expo Ilustración'],['Nota','Mencionar cierre convocatoria textil dom 17']] },
+  lun19: { color:'#1A3A5C', title:'Lunes 19 — FF · Agenda semana 4', rows:[['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Eventos','Clases cocina · Claudia Varleta · DJ · Expo Ilustración'],['Fechas','Sáb 23 y Dom 24 mayo']] },
+  mie21: { color:'#2D6A1F', title:'Miércoles 21 — FF · Expositor destacado', rows:[['Tipo','Contenido de valor — historia humana'],['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Idea','Entrevista breve a un expositor del mercado'],['Objetivo','Conectar emocionalmente con la comunidad']] },
+  vie23: { color:'#7A4200', title:'Viernes 23 — FF · Recordatorio semana 4', rows:[['Hora','09:00 hrs'],['Segmento','Abrieron lunes · ~200 est.'],['Eventos','Clases cocina · DJ · Expo Ilustración']] },
+  lun26: { color:'#1A3A5C', title:'Lunes 26 — FF · Día del Patrimonio ★', rows:[['Tipo','Email elaborado — fecha especial'],['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Hero','Vinilos + Visitas guiadas · Día del Patrimonio'],['Secundario','Expo Ilustración Factor F'],['Tono','Editorial y emotivo — no solo agenda']] },
+  mie28: { color:'#2D6A1F', title:'Miércoles 28 — FF · Historia del edificio ★', rows:[['Tipo','Contenido de valor — patrimonio'],['Hora','09:00 hrs'],['Segmento','Toda la base · 2.134'],['Idea','Historia del edificio · por qué se llama Factoría Franklin'],['Objetivo','Conectar con el Día del Patrimonio del finde']] },
+  vie30: { color:'#7A4200', title:'Viernes 30 — FF · Recordatorio Patrimonio', rows:[['Hora','09:00 hrs'],['Segmento','Abrieron lunes · ~200 est.'],['Eventos','Vinilos · Visitas guiadas · Expo Ilustración'],['Mensaje','Mañana empieza — última semana de mayo']] },
+};
+
+function show(key) {
+  const d = data[key];
+  if (!d) return;
+  const panel = document.getElementById('detail');
+  document.getElementById('dtitle').textContent = d.title;
+  document.getElementById('drows').innerHTML = d.rows.map(r =>
+    '<div class="drow"><span class="dlabel">' + r[0] + '</span><span class="dval">' + r[1] + '</span></div>'
+  ).join('');
+  panel.style.display = 'block';
+  panel.style.borderLeftColor = d.color;
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+</body>
+</html>
