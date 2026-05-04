@@ -7,7 +7,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F5F0; color: #111; }
- 
+
 /* HEADER */
 .header { background: #1A3A5C; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; }
 .header-left { display: flex; align-items: center; gap: 16px; }
@@ -25,28 +25,28 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .search-result-title { font-size: 12px; font-weight: 500; color: #111; }
 .search-result-sub { font-size: 11px; color: #888; }
 .search-result-tag { font-size: 10px; padding: 1px 6px; border-radius: 10px; margin-left: 6px; }
- 
+
 /* TABS */
 .tabs { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 0 28px; display: flex; gap: 0; }
 .tab { padding: 14px 20px; font-size: 13px; font-weight: 500; color: #888; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.15s; white-space: nowrap; }
 .tab:hover { color: #333; }
 .tab.active { color: #1A3A5C; border-bottom-color: #1A3A5C; }
- 
+
 /* CONTENT */
 .content { padding: 24px 28px; max-width: 1100px; }
 .pane { display: none; }
 .pane.active { display: block; }
- 
+
 /* CARDS */
 .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
 .card-title { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 14px; }
- 
+
 /* STATS ROW */
 .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
 .stat { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
 .stat-n { font-size: 24px; font-weight: 700; }
 .stat-l { font-size: 11px; color: #888; margin-top: 3px; }
- 
+
 /* CALENDAR */
 .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 8px; }
 .cal-day-header { font-size: 10px; font-weight: 600; text-align: center; color: #aaa; text-transform: uppercase; padding: 4px 0; }
@@ -67,7 +67,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .cal-card.rec { background: #FFF3E0; color: #7A3800; }
 .cal-chip { font-size: 9px; color: #999; border-top: 1px solid #eee; margin-top: 2px; padding-top: 2px; }
 .week-label { font-size: 11px; font-weight: 600; color: #555; margin: 16px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #eee; }
- 
+
 /* EVENTS */
 .event-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
 .event-row:last-child { border: none; }
@@ -78,7 +78,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .event-name { font-size: 13px; font-weight: 500; color: #111; }
 .event-detail { font-size: 11px; color: #888; margin-top: 2px; }
 .event-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
- 
+
 /* METRICS */
 .metric-card { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .metric-item { background: #f9f9f9; border-radius: 10px; padding: 16px; }
@@ -87,7 +87,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .metric-sub { font-size: 11px; color: #888; margin-top: 4px; }
 .metric-bar-wrap { background: #e8e8e8; border-radius: 10px; height: 6px; margin-top: 8px; }
 .metric-bar { height: 6px; border-radius: 10px; }
- 
+
 /* DATABASE */
 .seg-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
 .seg-row:last-child { border: none; }
@@ -97,7 +97,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .seg-pct { font-size: 11px; color: #888; width: 36px; text-align: right; }
 .seg-bar-wrap { width: 100px; background: #eee; border-radius: 10px; height: 5px; }
 .seg-bar { height: 5px; border-radius: 10px; }
- 
+
 /* CHECKLIST */
 .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 6px; background: #fff; cursor: pointer; }
 .check-item:hover { border-color: #ccc; }
@@ -114,7 +114,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .tag-pending { background: #FFF3E0; color: #7A4200; }
 .progress-wrap { background: #f0f0f0; border-radius: 20px; height: 6px; margin-bottom: 16px; }
 .progress-bar { background: #2D6A1F; border-radius: 20px; height: 6px; transition: width 0.3s; }
- 
+
 /* FACTOR F */
 .ff-hero { background: linear-gradient(135deg, #1a0a0f 0%, #3a0a1a 100%); border-radius: 12px; padding: 28px; margin-bottom: 16px; display: flex; align-items: center; gap: 24px; }
 .ff-logo-big { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #E8004C; border: 2px solid #E8004C; padding: 6px 12px; border-radius: 4px; }
@@ -126,12 +126,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .info-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 14px; }
 .info-label { font-size: 11px; font-weight: 600; color: #E8004C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
 .info-value { font-size: 13px; color: #111; line-height: 1.5; }
- 
+
 /* LEGEND */
 .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
 .leg { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
 .leg-dot { width: 10px; height: 10px; border-radius: 2px; }
- 
+
 @media(max-width:700px){
   .stats-row{grid-template-columns:repeat(3,1fr);}
   .cal-grid{grid-template-columns:repeat(4,1fr);}
@@ -142,7 +142,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </style>
 </head>
 <body>
- 
+
 <div class="header">
   <div class="header-left">
     <span class="logo-ff">Factoría Franklin</span>
@@ -155,7 +155,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="search-results" id="searchResults"></div>
   </div>
 </div>
- 
+
 <div class="tabs">
   <div class="tab active" onclick="showTab('calendario')">📅 Calendario emails</div>
   <div class="tab" onclick="showTab('metricas')">📊 Métricas</div>
@@ -163,10 +163,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="tab" onclick="showTab('base')">👥 Base de datos</div>
   <div class="tab" onclick="showTab('tareas')">✅ Tareas</div>
   <div class="tab" onclick="showTab('factorf')">🎨 Factor F</div>
+  <div class="tab" onclick="showTab('notas')">📝 Notas</div>
 </div>
- 
+
 <div class="content">
- 
+
 <!-- CALENDARIO -->
 <div id="tab-calendario" class="pane active">
   <div class="legend">
@@ -175,7 +176,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="leg"><div class="leg-dot" style="background:#7A4200"></div>Recordatorio</div>
     <div class="leg"><div class="leg-dot" style="background:#E8004C"></div>Factor F</div>
   </div>
- 
+
   <div class="week-label">Semana 1 — 1 al 4 mayo · Medieval Party</div>
   <div class="cal-grid">
     <div class="cal-day-header">Lun</div><div class="cal-day-header">Mar</div><div class="cal-day-header">Mié</div><div class="cal-day-header">Jue</div><div class="cal-day-header">Vie</div><div class="cal-day-header">Sáb</div><div class="cal-day-header">Dom</div>
@@ -192,7 +193,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
     <div class="cal-day weekend"><div class="cal-day-num">Dom 04</div><div class="cal-chip">Medieval Party</div></div>
   </div>
- 
+
   <div class="week-label">Semana 2 — 5 al 11 mayo · Expo Ilustración inaugura</div>
   <div class="cal-grid">
     <div class="cal-day-header">Lun</div><div class="cal-day-header">Mar</div><div class="cal-day-header">Mié</div><div class="cal-day-header">Jue</div><div class="cal-day-header">Vie</div><div class="cal-day-header">Sáb</div><div class="cal-day-header">Dom</div>
@@ -230,7 +231,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="cal-day weekend"><div class="cal-day-num">Sáb 09</div><div class="cal-chip">Bye Bye 13:30</div><div class="cal-chip">Mercado Factoría</div><div class="cal-chip">Expo Ilustración</div></div>
     <div class="cal-day weekend"><div class="cal-day-num">Dom 10</div><div class="cal-chip">DJ</div><div class="cal-chip">Mercado Factoría</div><div class="cal-chip">Expo Ilustración</div></div>
   </div>
- 
+
   <div class="week-label">Semana 3 — 12 al 18 mayo · Expo Muñecas · Clases cocina · Convocatoria Textil</div>
   <div class="cal-grid">
     <div class="cal-day-header">Lun</div><div class="cal-day-header">Mar</div><div class="cal-day-header">Mié</div><div class="cal-day-header">Jue</div><div class="cal-day-header">Vie</div><div class="cal-day-header">Sáb</div><div class="cal-day-header">Dom</div>
@@ -257,7 +258,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="cal-day weekend"><div class="cal-day-num">Sáb 16</div><div class="cal-chip">Expo Muñecas</div><div class="cal-chip">Clases cocina</div><div class="cal-chip">Expo Ilustración</div></div>
     <div class="cal-day weekend"><div class="cal-day-num">Dom 17</div><div class="cal-chip">Expo Muñecas</div><div class="cal-chip">Expo Ilustración</div><div class="cal-chip">⏰ Cierre textil</div></div>
   </div>
- 
+
   <div class="week-label">Semana 4 — 19 al 25 mayo · Clases cocina · DJ</div>
   <div class="cal-grid">
     <div class="cal-day-header">Lun</div><div class="cal-day-header">Mar</div><div class="cal-day-header">Mié</div><div class="cal-day-header">Jue</div><div class="cal-day-header">Vie</div><div class="cal-day-header">Sáb</div><div class="cal-day-header">Dom</div>
@@ -284,7 +285,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="cal-day weekend"><div class="cal-day-num">Sáb 23</div><div class="cal-chip">Clases cocina</div><div class="cal-chip">Expomuñecas</div><div class="cal-chip">Expo Ilustración</div></div>
     <div class="cal-day weekend"><div class="cal-day-num">Dom 24</div><div class="cal-chip">DJ</div><div class="cal-chip">Expo Ilustración</div></div>
   </div>
- 
+
   <div class="week-label">Semana 5 — 26 al 31 mayo · Día del Patrimonio ★</div>
   <div class="cal-grid">
     <div class="cal-day-header">Lun</div><div class="cal-day-header">Mar</div><div class="cal-day-header">Mié</div><div class="cal-day-header">Jue</div><div class="cal-day-header">Vie</div><div class="cal-day-header">Sáb</div><div class="cal-day-header">Dom</div>
@@ -312,7 +313,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="cal-day weekend"><div class="cal-day-num">Dom 31</div><div class="cal-chip">Vinilos</div><div class="cal-chip">Visitas guiadas</div><div class="cal-chip">Expo Ilustración</div></div>
   </div>
 </div>
- 
+
 <!-- MÉTRICAS -->
 <div id="tab-metricas" class="pane">
   <div class="stats-row">
@@ -322,7 +323,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="stat"><div class="stat-n" style="color:#2D6A1F">0%</div><div class="stat-l">spam · 0</div></div>
     <div class="stat"><div class="stat-n" style="color:#7A4200">0.33%</div><div class="stat-l">bajas · 7</div></div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Envío sábado 03 mayo — Agenda general Factoría Franklin</div>
     <div class="metric-card">
@@ -355,7 +356,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <strong>Conclusión:</strong> Base inactiva 4 meses · 0 denuncias de spam · base sana y lista para activar. Los 212 que abrieron son el segmento caliente para los próximos envíos.
     </div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Objetivos para fin de mayo</div>
     <div class="metric-card">
@@ -366,58 +367,75 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 </div>
- 
+
 <!-- EVENTOS -->
 <div id="tab-eventos" class="pane">
   <div class="card">
     <div class="card-title">Eventos mayo 2026</div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">07</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Expo Ilustración — Inauguración <span class="event-tag" style="background:#FFF0F4;color:#E8004C;">Factor F</span></div><div class="event-detail">19:00 – 22:00 hrs · Franklin #741 · Inscripción previa</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">09</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Bye Bye Showroom <span class="event-tag" style="background:#E6F1FB;color:#1A3A5C;">Factoría</span></div><div class="event-detail">13:30 – 18:30 hrs · Galpón Eventos · Liquidación ropa</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">09</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Mercado Factoría Ed. N°3 <span class="event-tag" style="background:#E6F1FB;color:#1A3A5C;">Factoría</span></div><div class="event-detail">Sáb 09 y Dom 10 · Estacionamientos · Entrada liberada</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">16</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Expo Venta Muñecas Chile <span class="event-tag" style="background:#E6F1FB;color:#1A3A5C;">Factoría</span></div><div class="event-detail">Sáb 16 y Dom 17 · 10 a 19 hrs · Galpón · Entrada liberada</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">16</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Clases de cocina — Claudia Varleta <span class="event-tag" style="background:#E6F1FB;color:#1A3A5C;">Factoría</span></div><div class="event-detail">Sáb 16, 23 mayo · Galpón · Gratuita · 20 cupos</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">17</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Cierre Convocatoria Textil <span class="event-tag" style="background:#FFF0F4;color:#E8004C;">Factor F</span></div><div class="event-detail">Hasta el 17 de mayo · Link en bio · Inauguración 4 junio</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">30</div><div class="event-date-mon">Mayo</div></div>
       <div class="event-info"><div class="event-name">Vinilos + Visitas guiadas — Día del Patrimonio ★ <span class="event-tag" style="background:#E6F1FB;color:#1A3A5C;">Factoría</span></div><div class="event-detail">Sáb 30 y Dom 31 · 10 a 19 hrs · Galpón de Eventos</div></div>
     </div>
- 
+
     <div class="event-row">
       <div class="event-date"><div class="event-date-day">04</div><div class="event-date-mon">Jun</div></div>
       <div class="event-info"><div class="event-name">Expo Textil — Inauguración <span class="event-tag" style="background:#FFF0F4;color:#E8004C;">Factor F</span></div><div class="event-detail">Jueves 4 de junio · Factor F · Factoría Franklin</div></div>
     </div>
- 
+
+    <div class="event-row">
+      <div class="event-date"><div class="event-date-day">09</div><div class="event-date-mon">Mayo</div></div>
+      <div class="event-info"><div class="event-name">Clase de Yoga 🧘 <span class="event-tag" style="background:#EAF5DC;color:#2D6A1F;">Factoría</span></div><div class="event-detail">Sábado 09 mayo · Patio central · Formulario: mailchi.mp/factoria-franklin/clase_yoga_mayo</div></div>
+    </div>
+    <div class="event-row">
+      <div class="event-date"><div class="event-date-day">16</div><div class="event-date-mon">Mayo</div></div>
+      <div class="event-info"><div class="event-name">Clase de Yoga 🧘 <span class="event-tag" style="background:#EAF5DC;color:#2D6A1F;">Factoría</span></div><div class="event-detail">Sábado 16 mayo · Patio central · Revisar inscritos el viernes 15</div></div>
+    </div>
+    <div class="event-row">
+      <div class="event-date"><div class="event-date-day">23</div><div class="event-date-mon">Mayo</div></div>
+      <div class="event-info"><div class="event-name">Clase de Yoga 🧘 <span class="event-tag" style="background:#EAF5DC;color:#2D6A1F;">Factoría</span></div><div class="event-detail">Sábado 23 mayo · Patio central · Revisar inscritos el viernes 22</div></div>
+    </div>
+    <div class="event-row">
+      <div class="event-date"><div class="event-date-day">30</div><div class="event-date-mon">Mayo</div></div>
+      <div class="event-info"><div class="event-name">Clase de Yoga 🧘 <span class="event-tag" style="background:#EAF5DC;color:#2D6A1F;">Factoría</span></div><div class="event-detail">Sábado 30 mayo · Patio central · Revisar inscritos el viernes 29</div></div>
+    </div>
+
     <div class="event-row" style="border:none;padding-top:12px;background:#E8F1FB;border-radius:8px;padding:10px 12px;margin-top:8px;">
       <div style="font-size:12px;color:#1A3A5C;"><strong>Expo Ilustración — abierta todos los fines de semana de mayo:</strong> 9, 10, 16, 17, 23, 24, 30 y 31 de mayo · Factor F · Franklin #741</div>
     </div>
   </div>
 </div>
- 
+
 <!-- BASE DE DATOS -->
 <div id="tab-base" class="pane">
   <div class="stats-row" style="grid-template-columns:repeat(3,1fr)">
@@ -425,7 +443,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="stat"><div class="stat-n" style="color:#2D6A1F">212</div><div class="stat-l">calientes (abrieron)</div></div>
     <div class="stat"><div class="stat-n" style="color:#7A4200">7</div><div class="stat-l">bajas este mes</div></div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Segmentación por engagement</div>
     <div class="seg-row">
@@ -464,7 +482,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="seg-pct">53%</div>
     </div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Estrategia de segmentación</div>
     <div class="seg-row">
@@ -490,14 +508,34 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 </div>
- 
+
 <!-- TAREAS -->
 <div id="tab-tareas" class="pane">
   <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
     <span style="font-size:12px;color:#888;" id="task-progress-text">Calculando...</span>
   </div>
   <div class="progress-wrap"><div class="progress-bar" id="task-progress-bar" style="width:0%"></div></div>
- 
+
+  <div class="card">
+    <div class="card-title">🔁 Rutinas fijas</div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Revisar formulario yoga y enviar lista al grupo <span class="tag tag-week">cada viernes noche</span></div><div class="check-sub">Viernes 09, 16, 23 y 30 mayo · mailchi.mp/factoria-franklin/clase_yoga_mayo</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Revisar métricas de cada envío <span class="tag tag-week">cada lunes</span></div><div class="check-sub">Apertura · clics · bajas · spam · actualizar dashboard</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Actualizar eventos en la web <span class="tag tag-week">cada lunes</span></div><div class="check-sub">Verificar que no haya eventos pasados visibles · agregar eventos nuevos</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Programar emails de la semana <span class="tag tag-week">cada lunes AM</span></div><div class="check-sub">Lunes agenda · miércoles valor · viernes recordatorio</div></div>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-title">✅ Logros esta noche</div>
     <div class="check-item" onclick="toggleTask(this)">
@@ -521,9 +559,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div><div class="check-title done">Calendario estratégico mayo completo <span class="tag tag-done">listo</span></div><div class="check-sub">14 envíos · estructura Lun·Mié·Vie · 2 marcas diferenciadas</div></div>
     </div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">🔴 Urgente — esta semana</div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Inscripción Día del Patrimonio — web oficial estado <span class="tag tag-pending">esperando gráficas</span></div><div class="check-sub">Pendiente recibir gráficas para completar la inscripción</div></div>
+    </div>
     <div class="check-item" onclick="toggleTask(this)">
       <div class="chk"></div>
       <div><div class="check-title">Crear email martes 06 — Factoría Franklin <span class="tag tag-urgent">hoy lunes</span></div><div class="check-sub">Agenda finde + contenido valor · envío 9:00 AM martes</div></div>
@@ -554,7 +596,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 </div>
- 
+
 <!-- FACTOR F -->
 <div id="tab-factorf" class="pane">
   <div class="ff-hero">
@@ -567,7 +609,184 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <p>Espacio de exposiciones de arte dentro de Factoría Franklin. Distintas formas de trabajar la imagen desde lo propio — ilustración, textil, fotografía y más.</p>
     </div>
   </div>
- 
+  <div class="info-grid">
+    <div class="info-item"><div class="info-label">Ubicación</div><div class="info-value">Franklin #741, Santiago<br>Dentro de Factoría Franklin<br>Estacionamiento: San Francisco #2038</div></div>
+    <div class="info-item"><div class="info-label">Instagram</div><div class="info-value"><a href="https://www.instagram.com/factor__f/" target="_blank" style="color:#E8004C;">@factor__f</a></div></div>
+    <div class="info-item"><div class="info-label">Exposición actual</div><div class="info-value">Expo Ilustración<br>Inauguración: Mié 7 mayo 19:00<br>Abierta: todos los fines de semana de mayo</div></div>
+    <div class="info-item"><div class="info-label">Próxima expo</div><div class="info-value">Exposición Textil<br>Inauguración: Jue 4 junio<br>Convocatoria abierta hasta 17 mayo</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Convocatoria Textil — cierra 17 mayo</div>
+    <div class="event-row"><div class="event-info"><div class="event-name">¿Qué buscan?</div><div class="event-detail">Bordado · tejido · técnicas mixtas · procesos e ideas que estén pasando ahora.</div></div></div>
+    <div class="event-row"><div class="event-info"><div class="event-name">Fechas clave</div><div class="event-detail">Cierre convocatoria: 17 de mayo · Inauguración: jueves 4 de junio</div></div></div>
+    <div class="event-row" style="border:none"><div class="event-info"><div class="event-name">Email de convocatoria</div><div class="event-detail">Programado para miércoles 14 mayo · Segmento: toda la base 2.134</div></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Pendiente — reunión de hoy</div>
+    <div class="check-item" onclick="toggleTask(this)"><div class="chk"></div><div><div class="check-title">Crear pestaña Factor F en la web <span class="tag tag-urgent">urgente</span></div><div class="check-sub">Necesito de la jefa: descripción oficial · fotos · horarios de visita</div></div></div>
+    <div class="check-item" onclick="toggleTask(this)"><div class="chk"></div><div><div class="check-title">Formulario postulación convocatoria textil <span class="tag tag-urgent">urgente</span></div><div class="check-sub">Debe estar en la web antes del 14 mayo</div></div></div>
+    <div class="check-item" onclick="toggleTask(this)"><div class="chk"></div><div><div class="check-title">Logo Factor F en PNG con fondo transparente <span class="tag tag-pending">pendiente</span></div><div class="check-sub">Para usar en emails sin fondo blanco</div></div></div>
+  </div>
+</div>
+
+<!-- NOTAS -->
+<div id="tab-notas" class="pane">
+  <div class="card">
+    <div class="card-title">📝 Notas reunión — lunes 05 mayo 2026</div>
+    <textarea id="notas-reunion" placeholder="Escribe aquí las notas de la reunión de hoy..." style="width:100%;min-height:200px;border:1px solid #e0e0e0;border-radius:8px;padding:14px;font-size:13px;font-family:inherit;resize:vertical;outline:none;color:#111;line-height:1.6;"></textarea>
+    <div style="margin-top:8px;display:flex;gap:8px;">
+      <button onclick="saveNota()" style="background:#1A3A5C;color:#fff;border:none;border-radius:6px;padding:8px 16px;font-size:12px;cursor:pointer;font-weight:500;">Guardar nota</button>
+      <span id="nota-saved" style="font-size:12px;color:#2D6A1F;display:none;padding:8px 0;">✓ Guardado</span>
+    </div>
+  </div>
+
+  <div class="card" id="notas-guardadas-card" style="display:none;">
+    <div class="card-title">Notas guardadas</div>
+    <div id="notas-lista"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💡 Temas pendientes para próxima reunión</div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Definir contenido de valor email martes 06</div><div class="check-sub">¿Qué historia o info quiere contar la jefa?</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Info para pestaña Factor F en la web</div><div class="check-sub">Descripción oficial · fotos · horarios · formulario postulación</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Definir formularios y encuestas del mes</div><div class="check-sub">Inscripción eventos · postulación expositores · segmentación</div></div>
+    </div>
+    <div class="check-item" onclick="toggleTask(this)">
+      <div class="chk"></div>
+      <div><div class="check-title">Artículos del mes — aprobar temas</div><div class="check-sub">Historia Factoría · expositor destacado · qué es Factor F</div></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function toggleTask(item) {
+  let chk = item.querySelector('.chk');
+  let title = item.querySelector('.check-title');
+  chk.classList.toggle('done');
+  title.classList.toggle('done');
+  updateTaskProgress();
+}
+
+function updateTaskProgress() {
+  let all = document.querySelectorAll('#tab-tareas .chk, #tab-factorf .chk, #tab-notas .chk');
+  let done = document.querySelectorAll('#tab-tareas .chk.done, #tab-factorf .chk.done, #tab-notas .chk.done');
+  let pct = Math.round((done.length / all.length) * 100);
+  document.getElementById('task-progress-bar').style.width = pct + '%';
+  document.getElementById('task-progress-text').textContent = done.length + ' de ' + all.length + ' completados';
+}
+
+function saveNota() {
+  let text = document.getElementById('notas-reunion').value.trim();
+  if (!text) return;
+  let saved = JSON.parse(localStorage.getItem('notas_factoria') || '[]');
+  saved.push({ fecha: new Date().toLocaleString('es-CL'), texto: text });
+  localStorage.setItem('notas_factoria', JSON.stringify(saved));
+  document.getElementById('nota-saved').style.display = 'inline';
+  setTimeout(() => document.getElementById('nota-saved').style.display = 'none', 2000);
+  renderNotas();
+}
+
+function renderNotas() {
+  let saved = JSON.parse(localStorage.getItem('notas_factoria') || '[]');
+  if (!saved.length) return;
+  document.getElementById('notas-guardadas-card').style.display = 'block';
+  document.getElementById('notas-lista').innerHTML = saved.map((n, i) =>
+    `<div style="padding:10px 0;border-bottom:1px solid #f0f0f0;">
+      <div style="font-size:10px;color:#aaa;margin-bottom:4px;">${n.fecha}</div>
+      <div style="font-size:13px;color:#333;white-space:pre-wrap;">${n.texto}</div>
+      <button onclick="deleteNota(${i})" style="margin-top:6px;background:none;border:none;font-size:11px;color:#ccc;cursor:pointer;">Eliminar</button>
+    </div>`
+  ).join('');
+}
+
+function deleteNota(i) {
+  let saved = JSON.parse(localStorage.getItem('notas_factoria') || '[]');
+  saved.splice(i, 1);
+  localStorage.setItem('notas_factoria', JSON.stringify(saved));
+  renderNotas();
+}
+
+// BUSCADOR — escanea todo el contenido visible
+function doSearch(q) {
+  let box = document.getElementById('searchResults');
+  if (!q || q.length < 2) { box.style.display = 'none'; return; }
+  let results = [];
+  let tabs = ['calendario','metricas','eventos','base','tareas','factorf','notas'];
+  tabs.forEach(tabId => {
+    let pane = document.getElementById('tab-' + tabId);
+    if (!pane) return;
+    let items = pane.querySelectorAll('.cal-card, .event-name, .event-detail, .check-title, .check-sub, .seg-label, .metric-label, .card-title, .info-value, .info-label, .event-detail');
+    items.forEach(el => {
+      let text = el.textContent.trim();
+      if (text.toLowerCase().includes(q.toLowerCase()) && text.length > 3) {
+        let title = el.closest('.event-row') ? el.closest('.event-row').querySelector('.event-name')?.textContent.trim() :
+                    el.closest('.check-item') ? el.closest('.check-item').querySelector('.check-title')?.textContent.trim() :
+                    text.substring(0, 60);
+        if (title && !results.find(r => r.title === title)) {
+          results.push({ title: title.substring(0, 60), sub: text.substring(0, 80), tab: tabId });
+        }
+      }
+    });
+  });
+  if (!results.length) { box.style.display = 'none'; return; }
+  box.innerHTML = results.slice(0, 8).map(r =>
+    `<div class="search-result-item" onclick="goTo('${r.tab}')">
+      <div class="search-result-title">${r.title}</div>
+      <div class="search-result-sub">${r.sub}</div>
+    </div>`
+  ).join('');
+  box.style.display = 'block';
+}
+
+function goTo(tabName) {
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  let pane = document.getElementById('tab-' + tabName);
+  if (pane) pane.classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => {
+    if (t.getAttribute('onclick') && t.getAttribute('onclick').includes("'" + tabName + "'")) {
+      t.classList.add('active');
+    }
+  });
+  document.getElementById('searchResults').style.display = 'none';
+  document.getElementById('searchInput').value = '';
+}
+
+function hideSearch() { document.getElementById('searchResults').style.display = 'none'; }
+
+renderNotas();
+updateTaskProgress();
+</script>
+</body>
+</html>
+  <div class="ff-hero">
+    <div style="display:flex;align-items:center;">
+      <div class="ff-logo-big">FACTOR</div>
+      <div class="ff-f">F</div>
+    </div>
+    <div class="ff-desc">
+      <h2>Factor F by Factoría Franklin</h2>
+      <p>Espacio de exposiciones de arte dentro de Factoría Franklin. Distintas formas de trabajar la imagen desde lo propio — ilustración, textil, fotografía y más.</p>
+    </div>
+  </div>
+
   <div class="info-grid">
     <div class="info-item">
       <div class="info-label">Ubicación</div>
@@ -586,7 +805,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="info-value">Exposición Textil<br>Inauguración: Jue 4 junio<br>Convocatoria abierta hasta 17 mayo</div>
     </div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Convocatoria Textil — cierra 17 mayo</div>
     <div class="event-row">
@@ -608,7 +827,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       </div>
     </div>
   </div>
- 
+
   <div class="card">
     <div class="card-title">Pendiente — para reunión de mañana</div>
     <div class="check-item" onclick="toggleTask(this)">
@@ -625,9 +844,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 </div>
- 
+
 </div>
- 
+
 <script>
 function showTab(name) {
   document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
@@ -635,7 +854,7 @@ function showTab(name) {
   document.getElementById('tab-' + name).classList.add('active');
   event.target.classList.add('active');
 }
- 
+
 function toggleTask(item) {
   let chk = item.querySelector('.chk');
   let title = item.querySelector('.check-title');
@@ -643,7 +862,7 @@ function toggleTask(item) {
   title.classList.toggle('done');
   updateTaskProgress();
 }
- 
+
 function updateTaskProgress() {
   let all = document.querySelectorAll('#tab-tareas .chk, #tab-factorf .chk');
   let done = document.querySelectorAll('#tab-tareas .chk.done, #tab-factorf .chk.done');
@@ -651,7 +870,7 @@ function updateTaskProgress() {
   document.getElementById('task-progress-bar').style.width = pct + '%';
   document.getElementById('task-progress-text').textContent = done.length + ' de ' + all.length + ' completados';
 }
- 
+
 const searchData = [
   { title: 'Expo Ilustración — Inauguración', sub: 'Miércoles 7 mayo · 19:00 hrs · Factor F', tab: 'eventos' },
   { title: 'Mercado Factoría Ed. N°3', sub: 'Sáb 9 y Dom 10 mayo · Estacionamientos', tab: 'eventos' },
@@ -670,7 +889,7 @@ const searchData = [
   { title: 'Pestaña Factor F web', sub: 'Pendiente crear esta semana', tab: 'tareas' },
   { title: 'Apertura 9.9%', sub: 'Envío sábado 03 mayo · 212 abrieron', tab: 'metricas' },
 ];
- 
+
 function doSearch(q) {
   let box = document.getElementById('searchResults');
   if (!q || q.length < 2) { box.style.display = 'none'; return; }
@@ -679,7 +898,7 @@ function doSearch(q) {
   box.innerHTML = results.map(r => `<div class="search-result-item" onclick="goTo('${r.tab}')"><div class="search-result-title">${r.title}</div><div class="search-result-sub">${r.sub}</div></div>`).join('');
   box.style.display = 'block';
 }
- 
+
 function goTo(tab) {
   document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -688,9 +907,9 @@ function goTo(tab) {
   document.getElementById('searchResults').style.display = 'none';
   document.getElementById('searchInput').value = '';
 }
- 
+
 function hideSearch() { document.getElementById('searchResults').style.display = 'none'; }
- 
+
 updateTaskProgress();
 </script>
 </body>
